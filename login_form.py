@@ -7,7 +7,7 @@ win.setFg('white')
 win.setFont(16)
 win.addLabel('label_0', 'Login Window')
 win.addLabelEntry('Username')
-win.addLabelEntry('Password')
+win.addSecretLabelEntry('Password')
 
 def press(name):
     print(name, 'pressed')
