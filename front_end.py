@@ -1,5 +1,6 @@
 from appJar import gui
-
+# global variables
+count = 0
 win = gui('Hello World')
 # widgets
 win.addLabel('label1', 'hello world')
@@ -13,6 +14,15 @@ win.setResizable(False)
 # buttons
 def press(name):
     print (name, 'button pressed')
+    win.setLabel('label1', 'pressed')
+
+def press_btn(name):
+    print(name, 'second button pressed')
+    global count
+    count += 1
+    win.setLabel('label2', 'pressed ' + str(count) + ' times!')
+
 
 win.addButton('Press me', press)
+win.addButton('button', press_btn)
 win.go()
