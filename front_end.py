@@ -20,9 +20,8 @@ def press_btn(name):
     print(name, 'second button pressed')
     global count
     count += 1
-    win.setLabel('label2', 'pressed ' + str(count) + ' times!')
-
-
+    win.setLabel('label2', 'pressed: ' + str(count) + ' times!')
 win.addButton('Press me', press)
 win.addButton('button', press_btn)
+
 win.go()
