@@ -8,6 +8,8 @@ win.setFont(16)
 win.addLabel('label_0', 'Login Window')
 win.addLabelEntry('Username')
 win.addSecretLabelEntry('Password')
+win.addStatusbar()
+win.setStatusbar('New status...')
 
 def press(name):
     print(name, 'pressed')
