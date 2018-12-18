@@ -2,12 +2,17 @@
 front end for extracting flat files from sql scripts
 '''
 from appJar import gui
+import time
+
 #funtions
 def generate_file(name):
   print (name)
   print ('extension:')
   print (win.getRadioButton('f_ext'))
   
+  if name == 'clear':
+    pass
+
   if not win.getEntry('f1'):
     print ('sql file empty?')
   else:
@@ -19,11 +24,13 @@ def generate_file(name):
     print (win.getOptionBox('file seperator')) 
   else:
     win.popUp('Error', 'please select a file seperator', kind='error')
-    
+
 win = gui(title='File exporter')
 win.setIcon('images/Extract.ico')
 win.addLabel('tx_1', 'select sql script')
 win.addFileEntry('f1')
+win.addStatusbar()
+win.setStatusbar('status...')
 #win.addStatusbar(header='file extension selected: ')
 FILE_SEP = ['- select file seperator -', 'comma ( , )', 'tab ( )', 'pipe ( | )']
 win.addOptionBox('file seperator', FILE_SEP)
@@ -32,6 +39,7 @@ with win.labelFrame('file extension'):
   win.addRadioButton('f_ext', '.csv')
   win.addRadioButton('f_ext', '.txt')
   
-win.addButton('generate file', generate_file)
+win.addButtons(['generate file', 'clear'], generate_file)
+
 
 win.go()
