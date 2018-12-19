@@ -6,11 +6,9 @@ app=gui()
 app.addRadioButton("song", "Killer Queen")
 app.addRadioButton("song", "Paradise City")
 app.addRadioButton("song", "Parklife")
-done = True
 def press(name):
   print (name)
   app.thread(animate)
-    
 
 app.addStatusbar()
 app.setStatusbar('status...')
