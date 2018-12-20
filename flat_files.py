@@ -11,6 +11,7 @@ def generate_file(name):
   print (win.getRadioButton('f_ext'))
   
   if name == 'clear':
+    win.setEntry('f1', '', callFunction=False)
     pass
 
   if not win.getEntry('f1'):
@@ -25,7 +26,7 @@ def generate_file(name):
   else:
     win.popUp('Error', 'please select a file seperator', kind='error')
 
-win = gui(title='File exporter')
+win = gui(title='flat file exporter')
 win.setIcon('images/Extract.ico')
 win.addLabel('tx_1', 'select sql script')
 win.addFileEntry('f1')
